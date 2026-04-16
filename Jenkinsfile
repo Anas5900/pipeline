@@ -40,7 +40,7 @@ stage('Push') {
         } 
 stage('Start') {
             steps {  
-                sh '/usr/local/bin/docker compose up'
+                sh '/usr/local/bin/docker compose up -d'
             }
         }
 
