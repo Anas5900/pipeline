@@ -9,7 +9,7 @@ pipeline {
         }
          stage('Build') {
             steps {
-                sh '/usr/local/bin/docker build -t anas59/exo7:latest'
+                sh '/usr/local/bin/docker build -t anas59/exo7:latest .'
             }
         }
 stage('Login to Docker Hub') { 
