@@ -26,7 +26,7 @@ stage('Login to Docker Hub') {
 
                 )]) { 
 
-                    sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin' 
+                    sh 'echo $PASSWORD | /usr/local/bin/docker login -u $USERNAME --password-stdin' 
 
                 } 
 
@@ -35,12 +35,12 @@ stage('Login to Docker Hub') {
         }
 stage('Push') {
             steps {
-                sh 'docker push anas59/exo7:latest'
+                sh '/usr/local/bin/docker push anas59/exo7:latest'
             }
         } 
 stage('Start') {
             steps {  
-                sh 'docker compose up'
+                sh '/usr/local/bin/docker compose up'
             }
         }
 
